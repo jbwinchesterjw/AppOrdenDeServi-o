@@ -125,7 +125,7 @@ public class PedidosController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value = "/aprovaStatus/{id}", method=RequestMethod.PATCH)
+	@RequestMapping(value = "/canselaStatus/{id}", method=RequestMethod.PATCH)
 	public ResponseEntity<?> atualizaStatusCancelado(@PathVariable String status, @PathVariable("id") Long id) {
 		
 		Pedido putStatus = ipedidoRepository.cancelaStatus(status, id);
