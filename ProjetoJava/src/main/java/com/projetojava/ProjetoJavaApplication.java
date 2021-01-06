@@ -14,28 +14,33 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+
 @SpringBootApplication
-@EntityScan(basePackages = {"com.projetojava.domain"})
-@ComponentScan(basePackages = {"com.*"})
-@EnableJpaRepositories(basePackages = {"com.projetojava.repository"})
+@EntityScan(basePackages = { "com.projetojava.domain" })
+@ComponentScan(basePackages = { "com.*" })
+@EnableJpaRepositories(basePackages = { "com.projetojava.repository" })
 @EnableTransactionManagement
 @EnableWebMvc
 @RestController
 @EnableAutoConfiguration
 @EnableCaching
-public class ProjetoJavaApplication implements WebMvcConfigurer{
+public class ProjetoJavaApplication implements WebMvcConfigurer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProjetoJavaApplication.class, args);
 		//System.out.println(new BCryptPasswordEncoder().encode("123"));
 	}
-	
+
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/usuario/**")
-		.allowedMethods("*")
-		.allowedOrigins("*");
-		//allowedMethods("http://jbjavapro.com/", "localhost:8080");
+		registry.addMapping("http://jbjavapro.com/**").allowedMethods("*").allowedOrigins("*");
+		
+		registry.addMapping("/usuario/**").allowedMethods("*").allowedOrigins("*");
+
+		registry.addMapping("/profissao/**").allowedMethods("*").allowedOrigins("*");
+
+		registry.addMapping("/recuperar/**").allowedMethods("*").allowedOrigins("*");
+
 	}
 
 }

@@ -92,7 +92,6 @@ public class JwtTokenAutenticationSevice {
 
 		}
 
-		//response.addHeader("Access-Contol-Allow-Origin", "*");
 		liberacaoCors(response);
 		return null;// não autorizado
 
@@ -115,7 +114,6 @@ public class JwtTokenAutenticationSevice {
 		if (response.getHeader("Access-Control-Allow-Methods") == null) {
 			response.addHeader("Access-Control-Allow-Methods", "*");
 		}
-		//Access-Control-Allow-Origin
 		
 		
 	}
