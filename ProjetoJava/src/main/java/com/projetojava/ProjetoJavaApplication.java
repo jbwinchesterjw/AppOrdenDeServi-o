@@ -31,23 +31,7 @@ public class ProjetoJavaApplication implements WebMvcConfigurer {
 		SpringApplication.run(ProjetoJavaApplication.class, args);
 		//System.out.println(new BCryptPasswordEncoder().encode("123"));
 	}
-/*
-	@Override
-	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**")
-				.allowedOrigins("*")
-				.allowCredentials(false)
-				.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
-	}
-
-	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/swagger-ui.html**")
-				.addResourceLocations("classpath:/META-INF/resources/swagger-ui.html");
-		registry.
-				addResourceHandler("/webjars/**")
-				.addResourceLocations("classpath:/META-INF/resources/webjars/");
-	}*/
+	
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/**")
@@ -62,6 +46,15 @@ public class ProjetoJavaApplication implements WebMvcConfigurer {
 
 		registry.addMapping("/recuperar/**").allowedMethods("*").allowedOrigins("*");
 
+	}
+	
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/swagger-ui.html**")
+				.addResourceLocations("classpath:/META-INF/resources/swagger-ui.html");
+		registry.
+				addResourceHandler("/webjars/**")
+				.addResourceLocations("classpath:/META-INF/resources/webjars/");
 	}
 
 }
