@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
@@ -30,9 +31,29 @@ public class ProjetoJavaApplication implements WebMvcConfigurer {
 		SpringApplication.run(ProjetoJavaApplication.class, args);
 		//System.out.println(new BCryptPasswordEncoder().encode("123"));
 	}
-
+/*
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/**")
+				.allowedOrigins("*")
+				.allowCredentials(false)
+				.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
+	}
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/swagger-ui.html**")
+				.addResourceLocations("classpath:/META-INF/resources/swagger-ui.html");
+		registry.
+				addResourceHandler("/webjars/**")
+				.addResourceLocations("classpath:/META-INF/resources/webjars/");
+	}*/
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/**")
+		.allowedOrigins("*")
+		.allowCredentials(false)
+		.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
 		registry.addMapping("http://jbjavapro.com/**").allowedMethods("*").allowedOrigins("*");
 		
 		registry.addMapping("/usuario/**").allowedMethods("*").allowedOrigins("*");

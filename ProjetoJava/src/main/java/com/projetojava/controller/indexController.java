@@ -26,7 +26,7 @@ import com.projetojava.domain.Usuario;
 import com.projetojava.repository.ITelefoneRepository;
 import com.projetojava.repository.IUsuarioRepository;
 
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@CrossOrigin(origins = "http://jbjavapro.com/", maxAge = 3600)
 @RestController
 @RequestMapping(value = "/usuario")
 public class indexController {
