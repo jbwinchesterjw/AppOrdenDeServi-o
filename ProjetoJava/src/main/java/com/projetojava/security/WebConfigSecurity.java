@@ -22,7 +22,15 @@ public class WebConfigSecurity extends WebSecurityConfigurerAdapter{
 	@Autowired
 	private ImplementacaoUserDetailsService implementacaoUserDetailsSercice;
 	
+	@Override
+    protected void configure(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.authorizeRequests().antMatchers("/").permitAll().and()
+                .authorizeRequests().antMatchers("/console/**").permitAll();
+        httpSecurity.csrf().disable();
+        httpSecurity.headers().frameOptions().disable();
+    }
 	
+	/*
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
@@ -42,7 +50,7 @@ public class WebConfigSecurity extends WebSecurityConfigurerAdapter{
 		
 		.addFilterBefore(new JwtApiAutenticacaoFilter(), UsernamePasswordAuthenticationFilter.class);
 	
-	}
+	}*/
 	
 	
 	

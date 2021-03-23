@@ -1,6 +1,7 @@
 package com.projetojava.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -55,8 +56,6 @@ public interface IUsuarioRepository extends JpaRepository<Usuario, Long> {
 		Page<Usuario> retorno = findAll(example, pageRequest);
 		return retorno;
 	}
-
-	//void updateSenha(String senhaCriptografada, Long id);
 
 	  
 	

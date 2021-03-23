@@ -40,7 +40,15 @@ public class Usuario implements UserDetails{
 	
 	private String nome;
 	
+	public Usuario() {
+	}
 
+	public Usuario(String login, String senha, String nome) {
+		this.login = login;
+		this.senha = senha;
+		this.nome = nome;
+	}
+	
 	@OneToMany(mappedBy="usuario", orphanRemoval = true, cascade = CascadeType.ALL, fetch =FetchType.LAZY)
 	private List<Telefone> telefones = new ArrayList<Telefone>();
 	
@@ -124,7 +132,7 @@ public class Usuario implements UserDetails{
 	}
 
 	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
+	public Collection<? extends GrantedAuthority> getAuthorities() {//acesso dos usuarios 
 
 		return roles;
 	}

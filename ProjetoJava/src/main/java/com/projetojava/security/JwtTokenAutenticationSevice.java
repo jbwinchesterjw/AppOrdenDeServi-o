@@ -47,9 +47,7 @@ public class JwtTokenAutenticationSevice {
 
 		liberacaoCors(response);
 
-		response.addHeader("Access-Contol-Allow-Origin", "*");// resposta do front
-		// senha, login liberação de portas
-		// diferentes
+		//response.addHeader("Access-Contol-Allow-Origin", "*");
 
 		response.getWriter().write("{\"Authorization\": \"" + token + "\"}");
 
@@ -93,7 +91,7 @@ public class JwtTokenAutenticationSevice {
 		}
 
 		liberacaoCors(response);
-		return null;// não autorizado
+		return null;
 
 	}
 

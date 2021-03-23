@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
@@ -34,11 +33,13 @@ public class ProjetoJavaApplication implements WebMvcConfigurer {
 	
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**")
+		
+		/*registry.addMapping("/**")
 		.allowedOrigins("*")
 		.allowCredentials(false)
-		.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
-		registry.addMapping("http://jbjavapro.com/**").allowedMethods("*").allowedOrigins("*");
+		.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");*/
+		
+		//registry.addMapping("http://localhost:4200").allowedMethods("*").allowedOrigins("*");
 		
 		registry.addMapping("/usuario/**").allowedMethods("*").allowedOrigins("*");
 
@@ -47,7 +48,7 @@ public class ProjetoJavaApplication implements WebMvcConfigurer {
 		registry.addMapping("/recuperar/**").allowedMethods("*").allowedOrigins("*");
 
 	}
-	
+	/*
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/swagger-ui.html**")
@@ -55,6 +56,6 @@ public class ProjetoJavaApplication implements WebMvcConfigurer {
 		registry.
 				addResourceHandler("/webjars/**")
 				.addResourceLocations("classpath:/META-INF/resources/webjars/");
-	}
+	}*/
 
 }
