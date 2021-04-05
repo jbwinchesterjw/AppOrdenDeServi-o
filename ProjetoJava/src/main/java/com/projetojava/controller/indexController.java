@@ -72,7 +72,7 @@ public class indexController {
 	 * @return
 	 */
 	@DeleteMapping(value = "/deletarUser/{id}", produces = "application/text")
-	public String deleteUser(@PathVariable("id") Long id) {
+	public String deletarUsuario(@PathVariable("id") Long id) {
 
 		iusuarioRepository.deleteById(id);
 

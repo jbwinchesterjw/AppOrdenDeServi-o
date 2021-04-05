@@ -20,7 +20,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @ComponentScan(basePackages = { "com.*" })
 @EnableJpaRepositories(basePackages = { "com.projetojava.repository" })
 @EnableTransactionManagement
-@EnableWebMvc
+//@EnableWebMvc // para se realizar os teste deve comentar essa anotação pois quasa interferencia nas execuçoes dos teste
 @RestController
 @EnableAutoConfiguration
 @EnableCaching

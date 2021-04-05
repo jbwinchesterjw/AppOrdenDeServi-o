@@ -1,4 +1,4 @@
-package com.projetojava.repository.teste;
+package com.projetojava.repository;
 
 public class ITelefoneRepositoryTeste {
 
